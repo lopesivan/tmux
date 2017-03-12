@@ -1,9 +1,0 @@
-pane	0	1	:bash	0	:-	1	:/home/ivan/developer/scripts/xp	1	bash	:/bin/bash --init-file /home/ivan/.bash_it/bash_it.sh -i
-pane	0	2	:bash	1	:*	1	:/home/ivan/developer/scripts/xp/tests	1	bash	:/bin/bash --init-file /home/ivan/.bash_it/bash_it.sh -i
-pane	0	3	:bash	0	:	1	:/home/ivan/developer/scripts/bangsh	1	bash	:/bin/bash --init-file /home/ivan/.bash_it/bash_it.sh -i
-pane	0	4	:bash	0	:	1	:/home/ivan/developer/scripts/bangsh	1	bash	:/bin/bash --init-file /home/ivan/.bash_it/bash_it.sh -i
-window	0	1	0	:-	5fc0,91x27,0,0,11
-window	0	2	1	:*	5fc5,91x27,0,0,16
-window	0	3	0	:	5fc1,91x27,0,0,12
-window	0	4	0	:	5fc4,91x27,0,0,15
-state	0	
