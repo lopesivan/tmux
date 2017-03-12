@@ -1,0 +1,10 @@
+# ~/.tmuxinator/cinema.yml
+
+name: cinema
+root: /workspace
+pre_window: pyenv activate neovim3
+
+windows:
+  - work:
+  - Music: cd ~/Música
+

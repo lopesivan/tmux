@@ -1,0 +1,19 @@
+# ~/.tmuxinator/project.yml
+
+name: project
+root: /workspace/<%= @args[0] %>
+
+pre: tp --json-projections-00 > a
+pre_window: pyenv activate neovim2
+# startup_window: work
+# startup_pane: 1
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - pwd
+        - pwd
+
+  - work:
+

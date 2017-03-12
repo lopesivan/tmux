@@ -1,0 +1,21 @@
+# ~/.tmuxinator/vim.yml
+
+name: vim
+root: <%= ENV["DEVELOPER_VIM_DIR"] %>
+
+pre_window: pyenv activate neovim2
+#pre: pyenv activate neovim2
+startup_window: editor
+startup_pane: 1
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - pwd
+        - cd my-snippets
+        - cd snippets
+        - cd UltiSnips
+        - cd settings
+
+  - work:

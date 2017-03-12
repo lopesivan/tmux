@@ -1,0 +1,5 @@
+/home/ivan/Dropbox/dotfiles/tmux	40
+/tmp/sss	40
+/home/ivan/Dropbox/vim-manager/vim/UltiSnips	40
+/home/ivan/workspace/docker-place/chef-solo	40
+/home/ivan/workspace/docker-place/1.0/latex-writer/chef-solo-texlive	40

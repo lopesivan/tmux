@@ -1,0 +1,10 @@
+# ~/.tmuxinator/developer.yml
+
+name: developer
+root: <%= @args[0] %>
+pre_window: pyenv activate neovim2
+
+windows:
+  - work:
+  - Music: cd ~/Música
+

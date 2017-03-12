@@ -1,0 +1,15 @@
+# ~/.tmuxinator/bash-it.yml
+
+name: bash-it
+root: ~/.bash_it/
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim -c 'BufOnly' --servername VIM
+  - custom: cd custom/
+  - alias: cd aliases/available
+  - Music: cd ~/Música
+  - Video: cd ~/Downloads
+
