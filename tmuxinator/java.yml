@@ -1,13 +1,20 @@
-# ~/.tmuxinator/dev.yml
+# ~/.tmuxinator/java.yml
 
-name: dev
-root: /workspace/<%= @args[0] %>
+name: java
+root: <%= @args[0] %>
+
+# Optional tmux socket
+# socket_name: foo
+
 # Runs before everything. Use it to start daemons etc.
-pre: pyenv local neovim2
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: pyenv activate neovim2
-post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
-windows:
-  - work:
-  - Music: cd ~/Música
+pre: jenv local 1.8.0.121;
 
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: jenv shell 1.8.0.121
+post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
+
+windows:
+  - build:
+  - work:
+  - logs: jenv info java
+  - versions: jenv versions

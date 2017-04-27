@@ -1,13 +1,15 @@
-# ~/.tmuxinator/dev.yml
+# ~/.tmuxinator/chef.yml
 
-name: dev
-root: /workspace/<%= @args[0] %>
+name: chef
+root: <%= @args[0] %>
 # Runs before everything. Use it to start daemons etc.
-pre: pyenv local neovim2
+pre: rbenv local chefdk
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: pyenv activate neovim2
+pre_window: rbenv shell chefdk
 post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
+
 windows:
   - work:
   - Music: cd ~/Música
+  - logs: rbenv versions
 

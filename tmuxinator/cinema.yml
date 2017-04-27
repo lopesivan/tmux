@@ -1,8 +1,9 @@
 # ~/.tmuxinator/cinema.yml
 
 name: cinema
-root: /workspace
+root: <%= @args[0] %>
 pre_window: pyenv activate neovim3
+post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
 
 windows:
   - work:

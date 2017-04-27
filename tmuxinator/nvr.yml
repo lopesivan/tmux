@@ -1,24 +1,18 @@
-# ~/.tmuxinator/vim.yml
+# ~/.tmuxinator/nvr.yml
 
-name: vim
-root: <%= ENV["DEVELOPER_VIM_DIR"] %>
+name: nvr
+root: <%= @args[0] %>
 
 # Runs before everything. Use it to start daemons etc.
-pre: pyenv local neovim2
+pre: pyenv activate neovim3
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: pyenv activate neovim2
+pre_window: pyenv activate neovim3
 post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
-startup_window: editor
-startup_pane: 1
 
 windows:
   - editor:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
+        - vim
         - pwd
-        - cd my-snippets
-        - cd snippets
-        - cd UltiSnips
-        - cd settings
-
   - work:
