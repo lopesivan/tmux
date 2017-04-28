@@ -1,7 +1,7 @@
 # ~/.tmuxinator/dev.yml
 
 name: dev
-root: /workspace/<%= @args[0] %>
+root: <%= @args[0] %>
 # Runs before everything. Use it to start daemons etc.
 pre: pyenv local neovim2
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.

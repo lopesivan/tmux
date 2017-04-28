@@ -1,12 +1,12 @@
 # ~/.tmuxinator/project.yml
 
 name: project
-root: /workspace/<%= @args[0] %>
+root: <%= @args[0] %>
 
 pre: tp --json-projections-00 > a
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 pre_window: pyenv activate neovim2
-# startup_window: work
-# startup_pane: 1
+post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
 
 windows:
   - editor:
@@ -14,6 +14,5 @@ windows:
       panes:
         - pwd
         - pwd
-
   - work:
 
