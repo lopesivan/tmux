@@ -1,0 +1,15 @@
+# ~/.tmuxinator/git-new-remote.yml
+
+name: git-new-remote
+root: /tmp
+
+# Runs before everything. Use it to start daemons etc.
+pre: pyenv local neovim2
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: pyenv activate neovim2
+post: tmux ls | grep -v atta| cut -f 1 -d:| while read n; do tmux kill-session -t $n ;done
+
+windows:
+  - work: git novo-repositorio-remoto <%= @args[0] %>
+  - gitconfig: xp e .gitconfig
+  - git: cd ~/developer/scripts/git-scripts
